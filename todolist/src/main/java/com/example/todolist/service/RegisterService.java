@@ -29,7 +29,7 @@ public class RegisterService {
         User user = User.builder()
                 .username(registerRequest.getUsername())
                 .email(registerRequest.getEmail())
-                .passwordHash(passwordEncoder.encode(registerRequest.getPasswordHash()))
+                .passwordHash(passwordEncoder.encode(registerRequest.getPassword()))
                 .build();
 
         userRepository.save(user);

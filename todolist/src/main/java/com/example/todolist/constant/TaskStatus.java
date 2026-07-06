@@ -1,4 +1,4 @@
-package com.example.todolist.constraint;
+package com.example.todolist.constant;
 
 public class TaskStatus {
     public static final String PENDING = "PENDING";

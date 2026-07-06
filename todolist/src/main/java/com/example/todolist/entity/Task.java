@@ -51,5 +51,15 @@ public class Task {
     @Column(name = "updated_at")
     private Instant updatedAt;
 
+    @PrePersist
+    public void prePersist() {
+        createdAt = Instant.now();
+        updatedAt = Instant.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updatedAt = Instant.now();
+    }
 
 }

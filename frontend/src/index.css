@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .auth-bg {
+    @apply min-h-screen flex items-center justify-center px-4;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  }
+
+  .glass-card {
+    @apply w-full max-w-md rounded-2xl p-8 shadow-2xl backdrop-blur-xl;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-800 outline-none transition-all placeholder:text-slate-400;
+  }
+
+  .input-field:focus {
+    @apply border-indigo-400 ring-2 ring-indigo-100;
+  }
+
+  .btn-primary {
+    @apply w-full rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 py-3 font-semibold text-white shadow-lg transition-all hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply rounded-xl border border-slate-200 bg-white px-4 py-2 font-medium text-slate-700 transition-all hover:bg-slate-50;
+  }
+
+  .btn-danger {
+    @apply rounded-xl bg-rose-500 px-4 py-2 font-medium text-white transition-all hover:bg-rose-600;
+  }
+
+  .page-bg {
+    @apply min-h-screen;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  }
+}

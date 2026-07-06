@@ -15,7 +15,9 @@ public enum ErrorCodeApplication implements ErrorCode {
     ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, 404, "Role not found"),
     ROLE_ALREADY_EXISTS(HttpStatus.CONFLICT, 409, "Role already exists"),
     PERMISSION_NOT_FOUND(HttpStatus.NOT_FOUND, 404, "Permission not found"),
-    PERMISSION_ALREADY_EXISTS(HttpStatus.CONFLICT, 409, "Permission already exists");
+    PERMISSION_ALREADY_EXISTS(HttpStatus.CONFLICT, 409, "Permission already exists"),
+    TASK_NOT_FOUND(HttpStatus.NOT_FOUND, 404, "Task not found"),
+    INVALID_STATUS(HttpStatus.BAD_REQUEST, 400, "Invalid task status. Status must be PENDING or COMPLETED");
 
     private final HttpStatus status;
     private final int code;

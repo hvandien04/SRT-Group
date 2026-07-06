@@ -6,10 +6,10 @@ services:
       POSTGRES_DB: srtgroup
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-    tmpfs:
-      - /var/lib/postgresql/data:rw,noexec,nosuid,size=512m
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d srtgroup"]
       interval: 5s
@@ -34,7 +34,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        VITE_API_BASE_URL: http://localhost:8080
+        VITE_API_URL: http://localhost:8080
     container_name: frontend-app
     ports:
       - "3000:80"
@@ -53,3 +53,6 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+
+volumes:
+  postgres_data:
